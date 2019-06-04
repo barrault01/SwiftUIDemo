@@ -15,12 +15,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy HH:mm Z"
-        let rwc2019Date = formatter.date(from: "20-09-2019 19:45 +09:00") ?? Date()
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let countDownView = CountDownView(referenceDate: rwc2019Date)
-        window.rootViewController = UIHostingController(rootView: countDownView)
+        let rootView = MainView()
+        window.rootViewController = UIHostingController(rootView: rootView)
         self.window = window
         window.makeKeyAndVisible()
     }
